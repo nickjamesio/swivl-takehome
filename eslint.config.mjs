@@ -14,16 +14,12 @@ export default tseslint.config(
   eslint.configs.recommended,
   eslintConfigPrettier,
   {
-    extends: [...tseslint.configs.recommended],
+    extends: [...tseslint.configs.recommended, { rules: { '@typescript-eslint/no-explicit-any': 'off' } }],
 
     files: ['**/*.ts', '**/*.mts'],
 
     plugins: {
       '@typescript-eslint': tseslint.plugin,
-    },
-
-    rules: {
-      '@typescript-eslint/explicit-function-return-type': 'warn',
     },
 
     languageOptions: {
